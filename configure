@@ -247,9 +247,10 @@ function testmpi
 {
   status=1
   cat > .test.cxx <<EOF
+  #include <stdlib.h>
   #include "mpi.h"
   int main(){ 
-    MPI_Init(NULL,NULL);
+    MPI_Init(NULL, NULL);
     MPI_Datatype a = $1;
     MPI_Finalize();
     return 0; 
