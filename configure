@@ -409,9 +409,8 @@ function realcompiler
             compiler=gnu
             ;;
         *Cray*)
-            echo 'Cray compilers are not supported.'
-            exit 1
-            compiler=cray
+            echo 'Modern CRAY compilers are LLVM based, so should work as a clang compiler.'
+            compiler=clang
             ;;
         *clang*)
             #CLANG_VERSION=$(clang++ --version | grep -o "[0-9]\.[0-9]" | sort | head -n 1)
