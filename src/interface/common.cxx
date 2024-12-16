@@ -4,9 +4,6 @@
 #include "../shared/util.h"
 #include <random>
 
-#ifdef USE_MPI_CPP
-#define MPI_CXX_DOUBLE_COMPLEX MPI::DOUBLE_COMPLEX
-#endif
 
 
 namespace CTF_int {
@@ -550,8 +547,8 @@ namespace CTF_int {
                         recv_buffer, i32_recv_counts, i32_recv_displs, MPI_DOUBLE, cm);
           break;
         case 16:
-          MPI_Alltoallv(send_buffer, i32_send_counts, i32_send_displs, MPI_CXX_DOUBLE_COMPLEX,
-                        recv_buffer, i32_recv_counts, i32_recv_displs, MPI_CXX_DOUBLE_COMPLEX, cm);
+          MPI_Alltoallv(send_buffer, i32_send_counts, i32_send_displs, MPI_DOUBLE_COMPLEX,
+                        recv_buffer, i32_recv_counts, i32_recv_displs, MPI_DOUBLE_COMPLEX, cm);
           break;
         default:
           ABORT;
